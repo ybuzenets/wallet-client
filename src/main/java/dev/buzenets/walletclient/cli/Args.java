@@ -9,7 +9,7 @@ public class Args {
 
     @Getter
     @Parameter(names = {"-h", "--host"}, description = "Wallet server hostname")
-    private String host = "127.0.0.1";
+    private String host = "walletserver.buzenets.dev";
 
     @Getter
     @Parameter(names = {"-p", "--port"}, description = "Wallet server port")
