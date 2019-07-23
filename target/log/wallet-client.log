@@ -1,0 +1,9 @@
+2019-07-23 21:49:46,884 ERROR d.b.w.c.WalletClient [pool-3-thread-1] Deposit of 100.00 USD for user with id 1 completed successfully
+2019-07-23 21:49:46,890 ERROR d.b.w.c.WalletClient [pool-3-thread-1] Could not withdraw 200.00 USD for user with id 1, cause: Insufficient funds
+2019-07-23 21:49:46,906 ERROR d.b.w.c.WalletClient [pool-3-thread-1] Deposit of 100.00 EUR for user with id 1 completed successfully
+2019-07-23 21:49:46,946 INFO d.b.w.c.WalletClient [pool-3-thread-1] Balance request for user with id 1 completed
+Available funds: {EUR=700.00, GBP=0, USD=100.00}
+2019-07-23 21:49:46,967 INFO d.b.w.c.WalletClient [pool-3-thread-1] Withdrawal of 100.00 USD for user with id 1 completed successfully
+2019-07-23 21:49:46,973 INFO d.b.w.c.WalletClient [pool-3-thread-1] Balance request for user with id 1 completed
+Available funds: {EUR=700.00, GBP=0, USD=0.00}
+2019-07-23 21:49:46,977 ERROR d.b.w.c.WalletClient [pool-3-thread-1] Could not withdraw 100.00 USD for user with id 1, cause: Insufficient funds
