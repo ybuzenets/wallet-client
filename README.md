@@ -22,7 +22,7 @@ Avaiable command line options
 The results will be logged into `build/log/wallet-client.log` file and console output
 
 # Rounds #
-*Please not that not all rounds leave the wallet in a state it was before starting a round*
+*Please note that not all rounds leave the wallet in a state it was before starting a round*
 * Round A
   * Deposit 100 USD
   * Withdraw 200 USD
