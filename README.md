@@ -16,7 +16,7 @@ Avaiable command line options
 * **-h**, **--hostname**: hostname of the server (The client connects to the test instance deployed to walletserver.buzenets.dev if this parameter is not specified)
 * **-p**, **--port**: port number (Default value: 6565)
 * **-u**, **--users**: Number of concurrent users (Default: 1)
-* **-t, --threads**: Number of threads per user (Default: 1)
+* **-t, --threads**: Number of concurrent threads per user (Default: 1)
 * **-r, --rounds**: Number of rounds per thread (Default: 1)
 
 The results will be logged into `build/log/wallet-client.log` file and console output
