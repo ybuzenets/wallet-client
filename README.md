@@ -25,6 +25,7 @@ The results will be logged into `build/log/wallet-client.log` file and console o
 
 # Rounds #
 *Please note that not all rounds leave the wallet in a state it was before starting a round*
+
 *A round is chosen randomly before execution*
 * Round A
   * Deposit 100 USD
