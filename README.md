@@ -24,28 +24,28 @@ The results will be logged into `build/log/wallet-client.log` file and console o
 # Rounds #
 *Please not that not all rounds leave the wallet in a state it was before starting a round*
 * Round A
-** Deposit 100 USD
-** Withdraw 200 USD
-** Deposit 100 EUR
-** Get Balance
-** Withdraw 100 USD
-** Get Balance
-** Withdraw 100 USD
+  * Deposit 100 USD
+  * Withdraw 200 USD
+  * Deposit 100 EUR
+  * Get Balance
+  * Withdraw 100 USD
+  * Get Balance
+  * Withdraw 100 USD
 * Round B
-** Withdraw 100 GBP
-** Deposit 300 GPB
-** Withdraw 100 GBP
-** Withdraw 100 GBP
-** Withdraw 100 GBP
+  * Withdraw 100 GBP
+  * Deposit 300 GPB
+  * Withdraw 100 GBP
+  * Withdraw 100 GBP
+  * Withdraw 100 GBP
 * Round C
-** Get Balance
-** Deposit 100 USD
-** Deposit 100 USD
-** Withdraw 100 USD
-** Deposit 100 USD
-** Get Balance
-** Withdraw 200 USD
-** Get Balance
+  * Get Balance
+  * Deposit 100 USD
+  * Deposit 100 USD
+  * Withdraw 100 USD
+  * Deposit 100 USD
+  * Get Balance
+  * Withdraw 200 USD
+  * Get Balance
 
 
 # Performance benchmark results #
