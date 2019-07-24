@@ -16,7 +16,7 @@ public class Args {
     private int port = 6565;
 
     @Getter
-    @Parameter(names = {"-u, --users"}, description = "Number of concurrent users")
+    @Parameter(names = {"-u", "--users"}, description = "Number of concurrent users")
     private int users = 1;
 
     @Getter
