@@ -1,6 +1,7 @@
 # Wallet client #
 
 Client implementation for the server implemented in https://github.com/ybuzenets/wallet
+
 Performs a set of operations against the server and outputs the results
 
 # Setup #
