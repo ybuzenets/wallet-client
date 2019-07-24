@@ -26,7 +26,7 @@ public class WalletClient {
         stub = WalletGrpc.newBlockingStub(channel);
     }
 
-    public void makeDeposit(Long user, String amount, CURRENCY currency) {
+    public String makeDeposit(Long user, String amount, CURRENCY currency) {
         WalletRequest request = WalletRequest.newBuilder()
             .setUser(user)
             .setAmount(amount)
@@ -41,6 +41,7 @@ public class WalletClient {
                 currency.toString(),
                 user
             );
+            return "ok";
         } catch (StatusRuntimeException e) {
             LOG.error(
                 "Could not deposit {} {} for user with id {}, cause: {}",
@@ -50,10 +51,11 @@ public class WalletClient {
                 e.getStatus()
                     .getDescription()
             );
+            return e.getStatus().getDescription();
         }
     }
 
-    public void makeWithdrawal(Long user, String amount, CURRENCY currency) {
+    public String makeWithdrawal(Long user, String amount, CURRENCY currency) {
         WalletRequest request = WalletRequest.newBuilder()
             .setUser(user)
             .setAmount(amount)
@@ -68,6 +70,7 @@ public class WalletClient {
                 currency.toString(),
                 user
             );
+            return "ok";
         } catch (StatusRuntimeException e) {
             LOG.error(
                 "Could not withdraw {} {} for user with id {}, cause: {}",
@@ -77,19 +80,21 @@ public class WalletClient {
                 e.getStatus()
                     .getDescription()
             );
+            return e.getStatus().getDescription();
         }
     }
 
-    public void getBalance(Long user) {
+    public BalanceSummary getBalance(Long user) {
         WalletRequest request = WalletRequest.newBuilder()
             .setUser(user)
             .build();
         final BalanceSummary balance = stub.balance(request);
         final Map<String, String> amountMap = balance.getAmountMap();
-       LOG.info(
+        LOG.info(
             "Balance request for user with id {} completed\n" + "Available funds: {}",
             user,
             amountMap
         );
+        return balance;
     }
 }

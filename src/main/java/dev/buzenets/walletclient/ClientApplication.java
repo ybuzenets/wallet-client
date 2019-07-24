@@ -6,12 +6,8 @@ import dev.buzenets.walletclient.client.WalletClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 import static dev.buzenets.walletclient.functions.Functions.RUNNABLE_ROUND;
 
@@ -30,24 +26,17 @@ public class ClientApplication {
         final int threads = args.getThreads();
         final ExecutorService executorService = Executors.newFixedThreadPool(users * threads);
         final int rounds = args.getRounds();
-        final Collection<Future<?>> futures = new ArrayList<>();
+
         for (int round = 0; round < rounds; round++) {
             for (int thread = 0; thread < threads; thread++) {
                 for (int user = 1; user <= users; user++) {
-                    futures.add(executorService.submit(RUNNABLE_ROUND.apply(
+                    executorService.submit(RUNNABLE_ROUND.apply(
                         client,
                         (long) user
-                    )));
+                    ));
                 }
             }
         }
-        futures.forEach(future -> {
-            try {
-                future.get();
-            } catch (InterruptedException | ExecutionException e) {
-                LOG.error("Execution of round failed", e);
-            }
-        });
         executorService.shutdown();
     }
 }
