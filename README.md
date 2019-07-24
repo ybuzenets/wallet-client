@@ -1,6 +1,7 @@
 # Wallet client #
 
 Client implementation for the server implemented in https://github.com/ybuzenets/wallet
+Performs a set of operations against the server and outputs the results
 
 # Setup #
 
@@ -13,16 +14,17 @@ Then run the jar using
 java -jar walletclient-1.0.jar
 ```
 Avaiable command line options
-* **-h**, **--hostname**: hostname of the server (The client connects to the test instance deployed to walletserver.buzenets.dev if this parameter is not specified)
+* **-h**, **--hostname**: hostname of the server (Default value: walletserver.buzenets.dev)
 * **-p**, **--port**: port number (Default value: 6565)
-* **-u**, **--users**: Number of concurrent users (Default: 1)
-* **-t, --threads**: Number of concurrent threads per user (Default: 1)
-* **-r, --rounds**: Number of rounds per thread (Default: 1)
+* **-u**, **--users**: Number of concurrent users (Default value: 1)
+* **-t, --threads**: Number of concurrent threads per user (Default value: 1)
+* **-r, --rounds**: Number of rounds per thread (Default value: 1)
 
 The results will be logged into `build/log/wallet-client.log` file and console output
 
 # Rounds #
 *Please note that not all rounds leave the wallet in a state it was before starting a round*
+*A round is chosen randomly before execution*
 * Round A
   * Deposit 100 USD
   * Withdraw 200 USD
